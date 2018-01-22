@@ -1,0 +1,307 @@
+{
+  "rules": {
+    // 代码风格
+
+    // 重载函数是否连续
+    "adjacent-overload-signatures": true,
+    // 是否禁止逗号运算符
+    "ban-comma-operator": true,
+    // 是否禁止使用特定类型
+    "ban-types": false,
+    // 类的成员是否需要显示声明
+    "member-access": true,
+    // 是否强制成员排序
+    "member-ordering": [true, {
+      "order": [
+        "private-constructor",
+        "private-static-field",
+        "private-static-method",
+        "private-instance-field",
+        "private-instance-method",
+        "protected-constructor",
+        "protected-static-field",
+        "protected-static-method",
+        "protected-instance-field",
+        "protected-instance-method",
+        "public-constructor",
+        "public-static-field",
+        "public-static-method",
+        "public-instance-field",
+        "public-instance-method"
+      ]
+    }
+    ],
+    // 是否禁止 any 类型的使用
+    "no-any": false,
+    // 是否禁止空接口
+    "no-empty-interface": false,
+    // 是否禁止导入特定类型文件 忽略 .json
+    "no-import-side-effect": false,
+    // 是否禁止类型初始化
+    "no-inferrable-types": false,
+    // 是否禁止使用内部模块
+    "no-internal-module": true,
+    // 是否禁止使用指定常数值之外的数对变量赋值 默认 -1 ， 0 ，1
+    "no-magic-numbers": false,
+    // 是否禁止使用多个内部命名空间和模块
+    "no-namespace": false,
+    // 是否禁止使用非空的 ！后缀运算符
+    "no-non-null-assertion": true,
+    // 是否允许重写参数
+    "no-parameter-reassignment": false,
+    // 是否禁止使用 /// 引入其他文件，而改用 ES6 的 import
+    "no-reference": true,
+    // 断言没有改变表达式的类型时是否警告
+    "no-unnecessary-type-assertion": false,
+    // 是否禁止使用require引入，而采用import
+    "no-var-requires": false,
+    // 是否禁止传统的非箭头函数表达式 允许独立声明与特定格式
+    "only-arrow-functions": [true, "allow-declarations", "allow-named-functions"],
+    // 是否采用for of 遍历对象数组
+    "prefer-for-of": true,
+    // 是否必须采用 async 标记 promise 函数
+    "promise-function-async": true,
+
+    // 语法规则
+
+    // 当 await 后面不是promise函数返回值时是否警告
+    "await-promise": true,
+    // 禁止使用指定的语法 包括 eval $
+    "ban": [true, "eval", "$" ],
+    // 为 if/for/do/while 强制使用完整括号
+    "curly": true,
+    // 是否需要在for-in语句中加入if判断存在key属性
+    "forin": false,
+    // 是否禁止指定指定模块被引入
+    "import-blacklist": true,
+    // 是否禁止label语句出现在不合适的位置
+    "label-position": true,
+    // 是否禁止使用argument.callee
+    "no-arg": false,
+    // 是否禁止不被允许的位运算符
+    "no-bitwise": true,
+    // 是否禁止条件语句中的类型声明
+    "no-conditional-assignment": true,
+    // 是否禁止使用指定的console语句 包括console.error / dir
+    "no-console": [true, "error", "dir"],
+    // 是否禁止实例化String/Number/Boolean对象
+    "no-construct": true,
+    // 是否禁止使用debugger语句
+    "no-debugger": true,
+    // 是否禁止在constructor中多次使用super()
+    "no-duplicate-super": true,
+    // 是否禁止switch语句中的case值重复
+    "no-duplicate-switch-case": true,
+    // 是否禁止在一个代码块中出现重复的类型声明
+    "no-duplicate-variable": true,
+    // 是否禁止空代码块
+    "no-empty": false,
+    // 是否禁止使用eval
+    "no-eval": true,
+    // 函数返回的promise是否需要处理
+    "no-floating-promises": true,
+    // 是否禁止使用for-in进行遍历
+    "no-for-in-array": true,
+    // 是否禁止在package.json的dependencies中未标记的模块被引入 不在devdepend中的同样不被引入
+    "no-implicit-dependencies": false,
+    // 是否禁止空对象中的属性被引用
+    "no-inferred-empty-object-type": true,
+    // 是否禁止在非模板字符串中使用${
+    "no-invalid-template-strings": true,
+    // 是否允许在类的外面使用this
+    "no-invalid-this": false,
+    // 是否对修改接口的构造函数进行警告
+    "no-misused-new": true,
+    // 是否禁止使用 null
+    "no-null-keyword": true,
+    // 禁止对象文字出现在类型断言表达式中。对任何人仍然允许
+    "no-object-literal-type-assertion": true,
+    // 是否禁止使用 return await 语句返回promise
+    "no-return-await": false,
+    // 是否禁止隐式类型声明
+    "no-shadowed-variable": false,
+    // 是否禁止空数组
+    "no-sparse-arrays": false,
+    // 是否禁止不必要的字符串访问对象属性例如 this["string"]
+    "no-string-literal": true,
+    // 是否抛出堆栈错误追踪
+    "no-string-throw": false,
+    // 是否禁止引入模块下的子模块
+    "no-submodule-imports": false,
+    // 禁止switch 语句中允许越过case
+    "no-switch-case-fall-through": true,
+    // 是否禁止this的解构
+    "no-this-assignment": false,
+    // 是否禁止内部方法被外部直接调用 静态可以
+    "no-unbound-method": true,
+    // 是否禁止不必要的类 允许构造/空/全静态类
+    "no-unnecessary-class": ["allow-constructor-only","allow-empty-class", "allow-constructor-only"],
+    // 是否禁止传统方式下的any类型表达式
+    "no-unsafe-any": false,
+    // 是否禁止最后的控制流语句
+    "no-unsafe-finally": false,
+    // 是否禁止使用表达式语句
+    "no-unused-expression": false,
+    // 是否禁止存在未被使用的引入模块/属性/函数/私有方法
+    "no-unused-variable": true,
+    // 是否禁止在声明之前调用的情况
+    "no-use-before-declare": true,
+    // 是否禁止使用 var 关键词
+    "no-var-keyword": true,
+    // 是否禁止空类型函数不需包裹
+    "no-void-expression": true,
+    // 是否建议使用条件表达式
+    "prefer-conditional-expression": false,
+    // 是否使用es6 的 ...Obj 展开运算符去替换Obj.assign 进行对象合并
+    "prefer-object-spread": true,
+    // 是否建议当添加两个变量时，操作数必须全是string或者number
+    "restrict-plus-operands": true,
+    // 是否严格检查/限制判断语句中变量类型
+    "strict-boolean-expressions": false,
+    // 是否严格检查类型判断语句
+    "strict-type-predicates": true,
+    // 是否强制要求switch语句末尾追加default
+    "switch-default": true,
+    // 是否强制使用 全等或全不等判断
+    "triple-equals": true,
+    // 是否确保typeof的结果与正确的字符串值比较
+    "typeof-compare": true,
+    // 是否警告显示类型参数与默认类型一致
+    "use-default-type-parameter": true,
+    // 是否强制使用isNAN进行判断，而不是 === NAN
+    "use-isnan": true,
+
+    // 代码可维护性
+
+    // 是否指定循环或判断的最大层数
+    "cyclomatic-complexity": false,
+    // 是否确保文件结尾为新行
+    "eofline": true,
+    // 是否指定缩进 tab缩进 2 个单位
+    "indent": [false, "tabs", 2],
+    // 是否指定换行风格 为 \r
+    "linebreak-style": [true, "LF"],
+    // 是否指定单个文件中声明的类个数的最大值,包括类表达式
+    "max-classes-per-file": [true, 5],
+    // 是否限制文件内代码总行数
+    "max-file-line-count": [true, 500],
+    // 是否限制代码一行的最大长度
+    "max-line-length": [true, 150],
+    // 是否禁止 export default ，必须命名
+    "no-default-export": false,
+    // 是否禁止对一个模块的多次引入
+    "no-duplicate-imports": true,
+    // 是否禁止同个文件的命名空间合并
+    "no-mergeable-namespace": true,
+    // 是否禁止使用require，使用import
+    "no-require-imports": false,
+    // 是否检查对象中的键是否按照首字母排序
+    "object-literal-sort-keys": false,
+    // 是否使用const去声明那些声明一次的变量
+    "prefer-const": true,
+    // 是否强制使用尾逗号 单行与多行都要
+    "trailing-comma": [true, {"multiline": "always", "singleline": "always"}],
+
+    // 代码基础风格
+
+    // 是否检查对其方式
+    "align": true,
+    // 是否指定array类型表达方式
+    "array-type": [true, "array"],
+    // 是否强制在箭头函数的参数外部包裹 ()
+    "arrow-parens": true,
+    // 单行时是否可以省略return与{}
+    "arrow-return-shorthand": false,
+    // 在运算语句中是否将常量均放在右侧
+    "binary-expression-operand-order": true,
+    // 接口或者string类型在做标记时能否作为function类型
+    "callable-types": true,
+    // 是否强制使用大驼峰命名类或接口
+    "class-name": false,
+    // 是否指定注释格式 必需有空格
+    "comment-format": [true, "check-space"],
+    // 是否标记文件中的重要项目
+    "completed-docs": false,
+    // 是否强制检查文件编码方式是否为UTF8
+    "encoding": true,
+    // 是否强制检查文件头部是否存在指定标注 必需有 Copyright
+    "file-header": [true, "/**\\n\\s{1}@Description\\s{1}.*\\n\\* @Copyright\\s{1}.*"],
+    // 是否检查import关键字的间距
+    "import-spacing": true,
+    // 是否需要接口名称以大写字母 I 开头
+    "interface-name": false,
+    // 是否更愿意使用接口声明而不是普通声明
+    "interface-over-type-literal": false,
+    // 是否强制采用JSDoc注释
+    "jsdoc-format": false,
+    // 是否要求默认导入的名称与导入的声明相同，对匿名默认导出没有任何作用
+    "match-default-export-name": true,
+    // 是否在返回之前执行空行，而不是块中的唯一行
+    "newline-before-return": true,
+    // 是否强制通过new实例化对象时加 ()
+    "new-parens": true,
+    // 是否强制使用 as <Type> 而不是 <Type>
+    "no-angle-bracket-type-assertion": false,
+    // 是否在变量与布尔值比较时警告
+    "no-boolean-literal-compare": true,
+    // 是否禁止一行中出现多个空白
+    "no-consecutive-blank-lines": false,
+    // 是否禁止在字符串或注释外出现不规则的空格
+    "no-irregular-whitespace": true,
+    // 是否禁止类中的参数属性
+    "no-parameter-properties": false,
+    // 多个TS函数中禁止出现JSDoc
+    "no-redundant-jsdoc": true,
+    // 是否禁止使用 <reference types=''> 标记import引入的模块
+    "no-reference-import": true,
+    // 是否禁止行尾的空格
+    "no-trailing-whitespace": false,
+    // 是否禁止不必要的回掉包装
+    "no-unnecessary-callback-wrapper": false,
+    // 是否禁止let var 解构操作的变量被定义undefined
+    "no-unnecessary-initializer": false,
+    // 是否禁止不需要命名的空间修饰符
+    "no-unnecessary-qualifier": true,
+    // 是否强制小数必须以 0. 开头末尾不能为0
+    "number-literal-format": true,
+    // 是否强制在类的键加上 "" 包裹
+    "object-literal-key-quotes": false,
+    // 是否启用ES6语法简写
+    "object-literal-shorthand": true,
+    // 是否需要指定的令牌与前面的表达式处于同一行。
+    "one-line": false,
+    // 是否禁止多个变量定义在同一个声明语句，除了for语句
+    "one-variable-per-declaration": [true, "ignore-for-loop"],
+    // 是否检查import排序
+    "ordered-imports": false,
+    // 是否强制类中方法不能使用this
+    "prefer-function-over-method": false,
+    // 是否强制接口定义使用 foo(): void 替代 foo: () => void
+    "prefer-method-signature": true,
+    // 是否使用switch语句替换if语句
+    "prefer-switch": false,
+    // 是否允许使用模板字符串体会字符串拼接
+    "prefer-template": false,
+    // 是否指定引号标准
+    "quotemark": [true, "single"],
+    // 是否允许return undefined
+    "return-undefined": true,
+    // 是否强制规定语句结尾的分号 ;
+    "semicolon": [true ,"always"],
+    // 是否强制要求函数 () 前的空格与否  不允许空格
+    "space-before-function-paren": [true, "never"],
+    // 是否指定 () 中的空格
+    "space-within-parens": false,
+    // 是否要求switch语句的以break结尾
+    "switch-final-break": [true, "always"],
+    // 是否要求类型的分割必需以分号 ;
+    "type-literal-delimiter": false,
+    // 是否检查各种错误的变量名
+    "variable-name": false,
+    // 是否强制空格约定
+    "whitespace": [true,
+      "check-decl", "check-operator", "check-module",
+      "check-preblock", "check-separator", "check-type", "check-typecast"
+    ]
+  }
+}

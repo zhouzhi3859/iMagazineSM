@@ -1,0 +1,15 @@
+<div class="login" [style]="safeStyle">
+  <div class="login-container">
+    <h2>欢迎登陆iMagazine后台管理系统</h2>
+    <mat-form-field>
+      <input matInput [(ngModel)]="account" placeholder="账号" required>
+    </mat-form-field>
+    <mat-form-field>
+      <input matInput type="password" [(ngModel)]="pwd" placeholder="密码" required>
+    </mat-form-field>
+    <button mat-raised-button color="primary" (click)="login()">登陆</button>
+  </div>
+</div>
+
+<!--<input type="text" [(ngModel)]="account" placeholder="账号"><br>-->
+<!--<input type="password" [(ngModel)]="pwd" placeholder="密码"><br>-->

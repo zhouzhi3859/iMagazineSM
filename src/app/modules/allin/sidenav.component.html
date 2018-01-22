@@ -1,0 +1,10 @@
+<div class="sidenav-container">
+  <mat-accordion class="sidenav">
+    <mat-expansion-panel *ngFor="let nav of navList">
+      <mat-expansion-panel-header class="sidenav-title">
+        <mat-panel-title class="sidenav-list">{{ nav.title }}</mat-panel-title>
+      </mat-expansion-panel-header>
+      <button mat-button color="primary" class="sidenav-button" *ngFor="let item of nav.detail" (click)="item.clickFn()">{{ item.subtitle }}</button>
+    </mat-expansion-panel>
+  </mat-accordion>
+</div>

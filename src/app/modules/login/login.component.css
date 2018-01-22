@@ -1,0 +1,25 @@
+.login {
+  height: 100vh;
+}
+
+.login-container {
+  display: flex;
+  flex-direction: column;
+  width: 30%;
+  margin-left: 35%;
+  position: absolute;
+  top: calc(50vh - 170px);
+  padding: 1rem;
+  border: 1px solid #bbb;
+  border-radius: 5px;
+  background: white;
+  opacity: 0.9;
+}
+
+.login-container > * {
+  width: 100%;
+}
+
+.login-container > h2 {
+  font-style: italic;
+}

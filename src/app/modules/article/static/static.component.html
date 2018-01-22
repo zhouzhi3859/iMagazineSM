@@ -1,0 +1,29 @@
+<div>
+  <div>
+    <div>
+      <mat-tab-group (selectChange)="change($event)">
+        <mat-tab label="概览">
+        </mat-tab>
+        <mat-tab label="阅读相关">
+        </mat-tab>
+        <mat-tab label="评价相关">
+        </mat-tab>
+        <mat-tab label="收藏相关">
+        </mat-tab>
+        <mat-tab label="搜索相关">
+        </mat-tab>
+      </mat-tab-group>
+    </div>
+    <div class="select-container">
+      <mat-form-field>
+        <mat-select [(value)]="day" (selectionChange)="select($event)">
+          <mat-option value="1">24小时</mat-option>
+          <mat-option value="7">7天</mat-option>
+          <mat-option value="30">30天</mat-option>
+        </mat-select>
+      </mat-form-field>
+    </div>
+    <router-outlet></router-outlet>
+  </div>
+</div>
+

@@ -1,0 +1,26 @@
+<h2 class="table-title">{{this.day === 1 ? '24小时内' : (this.day + '天内') }}收藏量TOP5</h2>
+<div class="table-container mat-elevation-z8">
+  <mat-table #table [dataSource]="data">
+
+    <!-- Position Column -->
+    <ng-container matColumnDef="标题">
+      <mat-header-cell *matHeaderCellDef><p class="table-header">标题</p></mat-header-cell>
+      <mat-cell *matCellDef="let element"><p class="item-title">{{element.title}}</p></mat-cell>
+    </ng-container>
+
+    <!-- Name Column -->
+    <ng-container matColumnDef="收藏量">
+      <mat-header-cell *matHeaderCellDef><p class="table-header">收藏量</p></mat-header-cell>
+      <mat-cell *matCellDef="let element">{{element.number}}</mat-cell>
+    </ng-container>
+
+    <!-- Weight Column -->
+    <ng-container matColumnDef="更多操作">
+      <mat-header-cell *matHeaderCellDef><p class="table-header">更多操作</p></mat-header-cell>
+      <mat-cell *matCellDef="let element">{{element.ObjId}}</mat-cell>
+    </ng-container>
+
+    <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+    <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+  </mat-table>
+</div>

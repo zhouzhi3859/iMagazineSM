@@ -1,0 +1,13 @@
+<h2 mat-dialog-title *ngIf="hasTitle">{{ data.title }}</h2>
+<mat-dialog-content *ngIf="!hasQuestion">{{ data.content }}</mat-dialog-content>
+<mat-dialog-content *ngIf="hasQuestion">{{ data.question }}</mat-dialog-content>
+<mat-form-field *ngIf="hasQuestion">
+  <input matInput tabindex="1" [(ngModel)]="result">
+</mat-form-field>
+<mat-dialog-actions>
+  <button *ngIf="hasConfirmFn" mat-button (click)="data.confirmFn()">{{ "确认" || data.confirmText }}</button>
+  <button *ngIf="hasQuestion" mat-button (click)="answer()">{{ "确认" || data.confirmText }}</button>
+  <!-- Can optionally provide a result for the closing dialog. -->
+  <button *ngIf="hasCancelFn" mat-button mat-dialog-close (click)="data.cancelFn()">{{ "取消" || data.cancelText }}</button>
+  <button *ngIf="hasCancelText" mat-button mat-dialog-close>{{ data.cancelText || "取消" }}</button>
+</mat-dialog-actions>

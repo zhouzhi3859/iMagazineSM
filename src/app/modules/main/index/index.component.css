@@ -1,0 +1,21 @@
+.header {
+  position: fixed;
+}
+
+.header-backup {
+  height: 1rem;
+  width: 98vw;
+}
+
+.sidenav {
+  width: 200px;
+  height: calc(100vh - 3rem);
+  position: fixed;
+  top: 3rem;
+}
+
+.container {
+  height: calc(100vh - 3rem);
+  margin-left: 200px;
+  margin-top: 2rem;
+}

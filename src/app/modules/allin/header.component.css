@@ -1,0 +1,25 @@
+.header-container {
+  width: 100vw;
+  height: 3rem;
+  position: fixed;
+  background: #3594F8;
+}
+
+.header-title {
+  display: inline-block;
+  height: 3rem;
+  line-height: 3rem;
+  color: white;
+  font-style: italic;
+  margin-left: 15px;
+}
+
+.header-button {
+  height: 3rem;
+  line-height: 3rem;
+  color: white;
+  font-weight: bold;
+  background: #3594F8;
+  text-decoration: none;
+  margin: 0 1rem;
+}
