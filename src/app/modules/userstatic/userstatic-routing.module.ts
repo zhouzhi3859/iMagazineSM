@@ -3,18 +3,24 @@
  * @Copyright zhouzhi073859@outlook.com
  */
 
-// 导入模块
+// 引入模块
 import { NgModule, } from '@angular/core';
 import { Routes, RouterModule, } from '@angular/router';
 
+// 引入组件
+import { StaticComponent, } from './static/static.component';
+import { SumComponent, } from './sum/sum.component';
+
 const routes: Routes = [
   {
-    path: 'manage',
-    loadChildren: 'app/modules/usermanage/usermanage.module#UserManageModule',
-  },
-  {
     path: 'static',
-    loadChildren: 'app/modules/userstatic/userstatic.module#UserStaticModule',
+    component: StaticComponent,
+    children: [
+      {
+        path: 'sum',
+        component: SumComponent,
+      },
+    ],
   },
 ];
 
@@ -22,5 +28,4 @@ const routes: Routes = [
   imports: [ RouterModule.forChild(routes, ), ],
   exports: [ RouterModule, ],
 }, )
-export class UserRoutingModule {}
-
+export class UserStaticRoutingModule {}

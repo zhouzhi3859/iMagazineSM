@@ -5,14 +5,14 @@
 
 // 引入模块
 import { Component, OnInit, } from '@angular/core';
-import { Router, } from '@angular/router';
-// import { MatDialog, } from '@angular/material';
-
-// 引入组件
-// import { DialogComponent, } from '../../components/dialog/dialog.component';
+import { Router, NavigationEnd, } from '@angular/router';
 
 // 引入服务
 import { MainService, } from '../main.service';
+
+import 'rxjs/add/operator/filter';
+import 'rxjs/add/operator/map';
+import 'rxjs/add/operator/mergeMap';
 
 @Component({
   selector: 'index-component',
@@ -23,7 +23,6 @@ export class IndexComponent implements OnInit {
   constructor(
     private router: Router,
     private mainService: MainService,
-    // private dialog: MatDialog,
   ) {}
   public sidenavList = [
     {
@@ -38,7 +37,7 @@ export class IndexComponent implements OnInit {
           },
         },
         { subtitle: '文章管理', clickFn: () => {
-            this.router.navigate(['main/article/list', ], );
+            this.router.navigate(['main/article/manage/list', ], );
           },
         },
       ],
@@ -46,11 +45,11 @@ export class IndexComponent implements OnInit {
       title: '用户相关',
       detail: [
         { subtitle: '数据统计', clickFn: () => {
-            this.router.navigate(['main/user/static', ], );
+            this.router.navigate(['main/user/static/sum', ], );
           },
         },
         { subtitle: '用户管理', clickFn: () => {
-            this.router.navigate(['main/user/list', ], );
+            this.router.navigate(['main/user/manage/list', ], );
           },
         },
       ],
@@ -62,6 +61,11 @@ export class IndexComponent implements OnInit {
         this.router.navigate(['login', ], { replaceUrl: true, }, );
       }
     }, );
+    this.router.events
+      .filter((event, ) => event instanceof NavigationEnd, )
+      .subscribe((event: any, ) => {
+        console.log(event.url, );
+      }, );
   }
 }
 

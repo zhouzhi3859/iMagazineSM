@@ -7,29 +7,23 @@
 import { NgModule, } from '@angular/core';
 import { CommonModule, } from '@angular/common';
 import { HttpClientModule, } from '@angular/common/http';
+import { UserStaticModule, } from '../userstatic/userstatic.module';
+import { UserManageModule, } from '../usermanage/usermanage.module';
 import { UserRoutingModule, } from './user-routing.module';
-
-// 引入组件
-import { StaticComponent, } from './static.component';
-import { ListComponent, } from './list.component';
-import { DetailComponent, } from './detail.component';
-
-// 引入服务
-import { UserService, } from './user.service';
 
 @NgModule({
   imports: [
     CommonModule,
     HttpClientModule,
+    UserStaticModule,
+    UserManageModule,
     UserRoutingModule,
   ],
   exports: [],
   declarations: [
-    StaticComponent,
-    ListComponent,
-    DetailComponent,
   ],
-  providers: [ UserService, ],
+  providers: [
+  ],
   entryComponents: [
   ],
 }, )

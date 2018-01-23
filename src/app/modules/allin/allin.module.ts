@@ -14,8 +14,8 @@ import {
 } from '@angular/material';
 // 引入组件
 import { TestComponent, } from './test.component';
-import { HeaderComponent, } from './header.component';
-import { SidenavComponent, } from './sidenav.component';
+import { HeaderComponent, } from './header/header.component';
+import { SidenavComponent, } from './sidenav/sidenav.component';
 
 @NgModule({
   imports: [

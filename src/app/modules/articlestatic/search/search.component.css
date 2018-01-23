@@ -1,0 +1,36 @@
+.table-container {
+  display: flex;
+  flex-direction: column;
+  min-width: 300px;
+  margin-left: 3px;
+}
+
+.mat-table {
+  overflow: auto;
+  max-height: 500px;
+}
+
+.mat-header-cell.mat-sort-header-sorted {
+  color: black;
+}
+
+.table-title {
+  text-align: center;
+}
+
+.table-header {
+  color: black;
+  font-weight: bold;
+  font-size: 18px;
+  text-align: center;
+}
+
+.mat-cell {
+  text-align: center;
+}
+
+.item-title {
+  text-align: justify-all;
+}
+
+.spinner-container {}

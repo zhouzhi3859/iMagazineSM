@@ -12,13 +12,14 @@ import { Observable, } from 'rxjs';
 import { Config, } from '../../../environments/environment';
 
 @Injectable()
-export class ArticleService {
+export class UserStaticService {
   private config: any = Config;
   constructor(
     private http: HttpClient,
   ) {}
-  // 获取主题列表
-  public getThemList(): Observable<any> {
-    return this.http.get(this.config.apiUrl + '/article/them/list', );
+  // 获取用户列表
+  public getUserList(): Observable<Object> {
+    return this.http.get(this.config.apiUrl + '/user/list', );
   }
 }
+
