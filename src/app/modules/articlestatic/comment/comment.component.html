@@ -17,7 +17,7 @@
     <!-- Weight Column -->
     <ng-container matColumnDef="更多操作">
       <mat-header-cell *matHeaderCellDef><p class="table-header">更多操作</p></mat-header-cell>
-      <mat-cell *matCellDef="let element"><a [routerLink]="['/main/article/detail', element.ObjId, {type: 'comment', day: day}]">查看详情</a></mat-cell>
+      <mat-cell *matCellDef="let element"><a [routerLink]="['/main/article/manage/detail', element.ObjId, {type: 'comment', day: day}]">查看详情</a></mat-cell>
     </ng-container>
 
     <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>

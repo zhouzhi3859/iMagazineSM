@@ -4,15 +4,16 @@
  */
 
 // 引入模块
-import { Component, OnInit, } from '@angular/core';
+import { Component, ViewChild, OnInit, } from '@angular/core';
 import { Router, NavigationEnd, } from '@angular/router';
+
+// 引入组件
+import { SidenavComponent, } from '../../allin/sidenav/sidenav.component';
 
 // 引入服务
 import { MainService, } from '../main.service';
 
 import 'rxjs/add/operator/filter';
-import 'rxjs/add/operator/map';
-import 'rxjs/add/operator/mergeMap';
 
 @Component({
   selector: 'index-component',
@@ -24,6 +25,11 @@ export class IndexComponent implements OnInit {
     private router: Router,
     private mainService: MainService,
   ) {}
+
+  // 调用子组件
+  @ViewChild(SidenavComponent, )
+  public sidenav: SidenavComponent;
+
   public sidenavList = [
     {
       title: '文章相关',
@@ -56,15 +62,21 @@ export class IndexComponent implements OnInit {
     },
   ];
   public ngOnInit() {
+    // 查看登陆状态，如果没登陆就跳转到登陆页面
     this.mainService.getUser().subscribe((res, ) => {
       if (!res.isLogin) {
         this.router.navigate(['login', ], { replaceUrl: true, }, );
       }
     }, );
-    this.router.events
-      .filter((event, ) => event instanceof NavigationEnd, )
+    // 监听路由变化，设定左边卡片展开
+    this.router.events.filter((event, ) => event instanceof NavigationEnd, )
       .subscribe((event: any, ) => {
-        console.log(event.url, );
+        const url = event.url;
+        if(url.indexOf('main/article', ) > 0) {
+          this.sidenav.step = 0;
+        }else if(url.indexOf('main/user', ) > 0) {
+          this.sidenav.step = 1;
+        }
       }, );
   }
 }

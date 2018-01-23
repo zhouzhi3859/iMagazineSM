@@ -1,6 +1,6 @@
 <div class="sidenav-container">
   <mat-accordion class="sidenav">
-    <mat-expansion-panel *ngFor="let nav of navList">
+    <mat-expansion-panel *ngFor="let nav of navList; let idx=index" [expanded]="idx === step" (opened)="setStep(idx)">
       <mat-expansion-panel-header class="sidenav-title">
         <mat-panel-title class="sidenav-list">{{ nav.title }}</mat-panel-title>
       </mat-expansion-panel-header>
