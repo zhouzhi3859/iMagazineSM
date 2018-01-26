@@ -1,6 +1,10 @@
 # IMagazineSM
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.6.1.
+a manage system of iMagazine app
+
+```visit
+- you can visit http://www.zz3859.com:8081/ view running effect
+```
 
 ## Development server
 
