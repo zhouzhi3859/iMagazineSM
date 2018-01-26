@@ -7,5 +7,5 @@ export const environment = {
   production: true,
 };
 export const config = {
-  apiUrl: 'https://www.zz3859.com:8081/api',
+  apiUrl: 'http://www.zz3859.com:8081/api',
 };
