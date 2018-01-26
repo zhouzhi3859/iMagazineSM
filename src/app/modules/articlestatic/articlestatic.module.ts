@@ -7,7 +7,7 @@
 import { NgModule, } from '@angular/core';
 import { CommonModule, } from '@angular/common';
 import { HttpClientModule, } from '@angular/common/http';
-import { MatTabsModule, MatSelectModule, MatFormFieldModule, MatTableModule, MatDialogModule, MatProgressSpinnerModule, } from '@angular/material';
+import { MatTabsModule, MatSelectModule, MatFormFieldModule, MatTableModule, MatDialogModule, } from '@angular/material';
 import { ArticleStaticRoutingModule, } from './articlestatic-routing.module';
 
 // 引入组件
@@ -30,7 +30,6 @@ import { ArticleStaticService, } from './articlestatic.service';
     MatFormFieldModule,
     MatTableModule,
     MatDialogModule,
-    MatProgressSpinnerModule,
     ArticleStaticRoutingModule,
   ],
   exports: [

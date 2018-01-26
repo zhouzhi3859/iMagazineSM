@@ -22,6 +22,7 @@ export class SumComponent implements OnInit {
     private elementRef: ElementRef,
     private route: ActivatedRoute,
   ) {}
+  
   public day = 1;
 
   public title = '';
@@ -90,8 +91,9 @@ export class SumComponent implements OnInit {
   }
   public ngOnInit() {
     // 加载时获取传过来的参数，来显示对应时间段的数据
-    this.route.params.subscribe((data, ) => {
-      this.day = Number(data.day, );
+    this.route.params.subscribe((params, ) => {
+      this.articlestaticService.sendIndex(0, );
+      this.day = Number(params.day, );
       this.showStatic();
     }, );
   }

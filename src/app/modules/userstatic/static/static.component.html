@@ -1,2 +1,11 @@
-<h1>用户统计</h1>
-<router-outlet></router-outlet>
+<div>
+  <div>
+    <mat-tab-group (selectChange)="change($event)" [(selectedIndex)]="tabSelect">
+      <mat-tab label="概览">
+      </mat-tab>
+      <mat-tab label="新增用户">
+      </mat-tab>
+    </mat-tab-group>
+  </div>
+  <router-outlet></router-outlet>
+</div>

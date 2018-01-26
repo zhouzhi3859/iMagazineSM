@@ -4,19 +4,24 @@
  */
 
 // 引入模块
-import { Component, OnInit, } from '@angular/core';
-import { Router, NavigationEnd, } from '@angular/router';
+import { Component, OnInit, OnDestroy, } from '@angular/core';
+import { Router, } from '@angular/router';
+
+// 引入服务
+import { ArticleStaticService, } from '../articlestatic.service';
 
 @Component({
   selector: 'static-component',
   templateUrl: './static.component.html',
   styleUrls: ['./static.component.css', ],
 }, )
-export class StaticComponent implements OnInit {
+export class StaticComponent implements OnInit, OnDestroy {
   constructor(
+    private articleStaticService: ArticleStaticService,
     private router: Router,
   ) {}
-
+  
+  public i = 0;
   public tabSelect = 0;
   public day = '1';
 
@@ -56,21 +61,12 @@ export class StaticComponent implements OnInit {
   public ngOnInit() {
     // 加载时默认跳转到概览，显示24小时内数据
     this.router.navigate(['/main/article/static/sum', {day: '1', }, ], );
-    // 监听路由变化，不同的路由激活对应的选项
-    this.router.events.filter((event, ) => event instanceof NavigationEnd, )
-      .subscribe((event: any, ) => {
-        const url = event.url;
-        if(url.indexOf('main/article/static/sum', ) > 0) {
-          this.tabSelect = 0;
-        }else if(url.indexOf('main/article/static/read', ) > 0) {
-          this.tabSelect = 1;
-        }else if(url.indexOf('main/article/static/comment', ) > 0) {
-          this.tabSelect = 2;
-        }else if(url.indexOf('main/article/static/collect', ) > 0) {
-          this.tabSelect = 3;
-        }else if(url.indexOf('main/article/static/search', ) > 0) {
-          this.tabSelect = 4;
-        }
-      }, );
+    // 设定三级导航与路由联动
+    this.articleStaticService.getIndex().subscribe((index, ) => {
+      this.tabSelect = index;
+    }, );
+  }
+  public ngOnDestroy() {
+    this.articleStaticService.clearIndex();
   }
 }

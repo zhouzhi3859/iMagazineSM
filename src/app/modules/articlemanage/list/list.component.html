@@ -1,1 +1,46 @@
-<h1>这是列表页</h1>
+<!--<h2 class="table-title">主题列表</h2>-->
+<div class="table-container mat-elevation-z8">
+  <mat-table #table [dataSource]="articleList">
+    
+    <!-- Position Column -->
+    <ng-container matColumnDef="封面">
+      <mat-header-cell *matHeaderCellDef><p class="table-header">封面</p></mat-header-cell>
+      <mat-cell *matCellDef="let element"><p class="item-title"><img class="item-cover" [src]="element.cover" alt=""></p></mat-cell>
+    </ng-container>
+    
+    <!-- Name Column -->
+    <ng-container matColumnDef="标题">
+      <mat-header-cell *matHeaderCellDef><p class="table-header">标题</p></mat-header-cell>
+      <mat-cell *matCellDef="let element">{{element.title}}</mat-cell>
+    </ng-container>
+  
+    <!-- Name Column -->
+    <ng-container matColumnDef="阅读量">
+      <mat-header-cell *matHeaderCellDef><p class="table-header">阅读量</p></mat-header-cell>
+      <mat-cell *matCellDef="let element">{{element.readCount}}</mat-cell>
+    </ng-container>
+  
+    <!-- Name Column -->
+    <ng-container matColumnDef="评论量">
+      <mat-header-cell *matHeaderCellDef><p class="table-header">评论量</p></mat-header-cell>
+      <mat-cell *matCellDef="let element">{{element.commentCount}}</mat-cell>
+    </ng-container>
+  
+    <!-- Name Column -->
+    <ng-container matColumnDef="收藏量">
+      <mat-header-cell *matHeaderCellDef><p class="table-header">收藏量</p></mat-header-cell>
+      <mat-cell *matCellDef="let element">{{element.collectCount}}</mat-cell>
+    </ng-container>
+    
+    <!-- Weight Column -->
+    <ng-container matColumnDef="更多操作">
+      <mat-header-cell *matHeaderCellDef><p class="table-header">更多操作</p></mat-header-cell>
+      <mat-cell *matCellDef="let element"><a [routerLink]="['/main/article/manage/detail', element.wid + element.cid + element.aid]">查看详情</a></mat-cell>
+    </ng-container>
+    
+    <mat-header-row *matHeaderRowDef="DisplayedColumns"></mat-header-row>
+    <mat-row *matRowDef="let row; columns: DisplayedColumns;"></mat-row>
+  </mat-table>
+  <mat-paginator #paginator [pageIndex]="pageNo" [pageSize]="pageSize" [pageSizeOptions]="[10, 20, 50]" [length]="totalCount" (page)="change($event)">
+  </mat-paginator>
+</div>

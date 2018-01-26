@@ -7,6 +7,7 @@
 import { Injectable, } from '@angular/core';
 import { HttpClient, } from '@angular/common/http';
 import { Observable, } from 'rxjs';
+import { Subject, } from 'rxjs/Subject';
 
 // 引入环境
 import { Config, } from '../../../environments/environment';
@@ -14,9 +15,22 @@ import { Config, } from '../../../environments/environment';
 @Injectable()
 export class ArticleStaticService {
   private config: any = Config;
+  private indexSubject = new Subject<any>();
   constructor(
     private http: HttpClient,
   ) {}
+  // 发送活动项组件index
+  public sendIndex(index: number, ): void {
+    this.indexSubject.next(index, );
+  }
+  // 获取活动项组件index
+  public getIndex(): Observable<any> {
+    return this.indexSubject.asObservable();
+  }
+  // 重置三级导航观察者
+  public clearIndex(): void {
+    this.indexSubject = new Subject<any>();
+  }
   // 获取统计数据
   public getStatic(body, ): Observable<any> {
     body.day = body.day || 1;

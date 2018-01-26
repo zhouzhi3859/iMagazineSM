@@ -12,5 +12,9 @@ import { Component, } from '@angular/core';
   styleUrls: ['./static.component.css', ],
 }, )
 export class StaticComponent {
-
+  public tabSelect = 0;
+  // 选择日期时跳转
+  public select(event, ) {
+    console.log(event, );
+  }
 }

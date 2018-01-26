@@ -18,12 +18,16 @@ const routes: Routes = [
     component: ManageComponent,
     children: [
       {
-        path: 'list',
+        path: 'list/:cid',
         component: ListComponent,
       },
       {
         path: 'detail/:id',
         component: DetailComponent,
+      },
+      {
+        path: 'list',
+        redirectTo: 'list/',
       },
     ],
   },

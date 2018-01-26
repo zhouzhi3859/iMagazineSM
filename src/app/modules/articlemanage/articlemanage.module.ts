@@ -7,6 +7,7 @@
 import { NgModule, } from '@angular/core';
 import { CommonModule, } from '@angular/common';
 import { HttpClientModule, } from '@angular/common/http';
+import { MatTableModule, MatPaginatorModule, } from '@angular/material';
 import { ArticleManageRoutingModule, } from './articlemanage-routing.module';
 
 // 引入组件
@@ -21,6 +22,8 @@ import { ArticleManageService, } from './articlemanage.service';
   imports: [
     CommonModule,
     HttpClientModule,
+    MatTableModule,
+    MatPaginatorModule,
     ArticleManageRoutingModule,
   ],
   exports: [],

@@ -5,7 +5,7 @@
 
 // 引入模块
 import { Component, ViewChild, OnInit, } from '@angular/core';
-import { Router, NavigationEnd, } from '@angular/router';
+import { Router, NavigationEnd,  } from '@angular/router';
 
 // 引入组件
 import { SidenavComponent, } from '../../allin/sidenav/sidenav.component';
@@ -25,8 +25,7 @@ export class IndexComponent implements OnInit {
     private router: Router,
     private mainService: MainService,
   ) {}
-
-  // 调用子组件
+  
   @ViewChild(SidenavComponent, )
   public sidenav: SidenavComponent;
 
@@ -43,7 +42,7 @@ export class IndexComponent implements OnInit {
           },
         },
         { subtitle: '文章管理', clickFn: () => {
-            this.router.navigate(['main/article/manage/list', ], );
+            this.router.navigate(['main/article/manage/list', '', ], );
           },
         },
       ],
@@ -68,13 +67,16 @@ export class IndexComponent implements OnInit {
         this.router.navigate(['login', ], { replaceUrl: true, }, );
       }
     }, );
-    // 监听路由变化，设定左边卡片展开
+    // 监听路由变化，设定二级导航与路由联动
     this.router.events.filter((event, ) => event instanceof NavigationEnd, )
       .subscribe((event: any, ) => {
         const url = event.url;
+        this.mainService.setAppUrl({url, }, );
         if(url.indexOf('main/article', ) > 0) {
           this.sidenav.step = 0;
         }else if(url.indexOf('main/user', ) > 0) {
+          this.sidenav.step = 1;
+        }else if(url.indexOf('main/placeholder', ) > 0) {
           this.sidenav.step = 1;
         }
       }, );

@@ -69,8 +69,9 @@ export class CollectComponent implements OnInit, OnDestroy {
 
   public ngOnInit() {
     // 加载时获取传过来的参数，来显示对应时间段的数据
-    this.route.params.subscribe((data, ) => {
-      this.day = Number(data.day, );
+    this.route.params.subscribe((params, ) => {
+      this.day = Number(params.day, );
+      this.articlestaticService.sendIndex(3, );
       // 如果弹窗存在且状态为开启
       if(this.dialogRefOpen) {
         // 关闭弹窗

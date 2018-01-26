@@ -15,7 +15,9 @@
 }
 
 .container {
-  height: calc(100vh - 3rem);
+  width: calc(100vw - 200px);
+  height: calc(100vh - 3.3rem);
+  overflow: hidden;
   margin-left: 200px;
   margin-top: 2rem;
 }

@@ -7,6 +7,7 @@
 import { NgModule, } from '@angular/core';
 import { CommonModule, } from '@angular/common';
 import { HttpClientModule, } from '@angular/common/http';
+import { MatTabsModule, } from '@angular/material';
 import { UserStaticRoutingModule, } from './userstatic-routing.module';
 
 // 引入组件
@@ -20,6 +21,7 @@ import { UserStaticService, } from './userstatic.service';
   imports: [
     CommonModule,
     HttpClientModule,
+    MatTabsModule,
     UserStaticRoutingModule,
   ],
   exports: [

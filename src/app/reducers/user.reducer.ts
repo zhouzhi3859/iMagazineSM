@@ -1,9 +1,8 @@
 /**
- * @Description user归约器
+ * @Description user还原器
  * @Copyright zhouzhi073859@outlook.com
  */
 
-// import { User, } from '../models/user.model';
 import * as UserAction from '../actions/user.action';
 
 interface User {
@@ -26,7 +25,7 @@ export const initialState: State = {
   },
 };
 
-export function  reducer(state = initialState, action: UserAction.Actions, ): State {
+export function reducer(state = initialState, action: UserAction.Actions, ): State {
   switch (action.type) {
     case UserAction.Login: {
       const user = action.payload;

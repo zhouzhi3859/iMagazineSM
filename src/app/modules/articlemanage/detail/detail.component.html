@@ -1,4 +1,91 @@
 <!--<div class="spinner-container"><mat-spinner></mat-spinner></div>-->
 <div *ngIf="showArticle" class="article-container">
-  <h2 class="article-title">{{article.title}}</h2>
+  <div class="article-title"><p>{{article.title}}</p></div>
+  <div class="article-info"><span>{{article.author}}</span>&nbsp;&nbsp;&nbsp;&nbsp;<span>{{article.time}}</span></div>
+  <div class="article-newsBg"><p>{{article.newsBg}}</p></div>
+  <div class="article-content" [innerHtml]="content"></div>
+  <div class="article-read" *ngIf="showRead">
+    <h2 class="table-title">{{day === 1 ? '24小时内' : (day + '天内') }}阅读记录</h2>
+    <div class="table-container mat-elevation-z8">
+      <mat-table #table [dataSource]="readDetail">
+
+        <!-- Position Column -->
+        <ng-container matColumnDef="用户">
+          <mat-header-cell *matHeaderCellDef><p class="table-header">用户</p></mat-header-cell>
+          <mat-cell *matCellDef="let element"><p class="item-title"><img class="item-logo" [src]="element.logoUrl" alt=""><div class="item-username">{{element.username}}</div></p></mat-cell>
+        </ng-container>
+
+        <!-- Name Column -->
+        <ng-container matColumnDef="时间">
+          <mat-header-cell *matHeaderCellDef><p class="table-header">时间</p></mat-header-cell>
+          <mat-cell *matCellDef="let element">{{element.time}}</mat-cell>
+        </ng-container>
+
+        <!-- Weight Column -->
+        <ng-container matColumnDef="更多操作">
+          <mat-header-cell *matHeaderCellDef><p class="table-header">更多操作</p></mat-header-cell>
+          <mat-cell *matCellDef="let element"><a>查看详情{{element.uid}}</a></mat-cell>
+        </ng-container>
+
+        <mat-header-row *matHeaderRowDef="DisplayedColumns"></mat-header-row>
+        <mat-row *matRowDef="let row; columns: DisplayedColumns;"></mat-row>
+      </mat-table>
+    </div>
+  </div>
+  <div class="article-comment" *ngIf="showComment">
+    <h2 class="table-title">{{day === 1 ? '24小时内' : (day + '天内') }}评论记录</h2>
+    <div class="table-container mat-elevation-z8">
+      <mat-table #table [dataSource]="commentDetail">
+    
+        <!-- Position Column -->
+        <ng-container matColumnDef="用户">
+          <mat-header-cell *matHeaderCellDef><p class="table-header">用户</p></mat-header-cell>
+          <mat-cell *matCellDef="let element"><p class="item-title"><img class="item-logo" [src]="element.logoUrl" alt=""><div class="item-username">{{element.username}}</div></p></mat-cell>
+        </ng-container>
+    
+        <!-- Name Column -->
+        <ng-container matColumnDef="时间">
+          <mat-header-cell *matHeaderCellDef><p class="table-header">时间</p></mat-header-cell>
+          <mat-cell *matCellDef="let element">{{element.time}}</mat-cell>
+        </ng-container>
+    
+        <!-- Weight Column -->
+        <ng-container matColumnDef="更多操作">
+          <mat-header-cell *matHeaderCellDef><p class="table-header">更多操作</p></mat-header-cell>
+          <mat-cell *matCellDef="let element"><a>查看详情{{element.uid}}</a></mat-cell>
+        </ng-container>
+    
+        <mat-header-row *matHeaderRowDef="DisplayedColumns"></mat-header-row>
+        <mat-row *matRowDef="let row; columns: DisplayedColumns;"></mat-row>
+      </mat-table>
+    </div>
+  </div>
+  <div class="article-collect" *ngIf="showCollect">
+    <h2 class="table-title">{{day === 1 ? '24小时内' : (day + '天内') }}收藏记录</h2>
+    <div class="table-container mat-elevation-z8">
+      <mat-table #table [dataSource]="collectDetail">
+    
+        <!-- Position Column -->
+        <ng-container matColumnDef="用户">
+          <mat-header-cell *matHeaderCellDef><p class="table-header">用户</p></mat-header-cell>
+          <mat-cell *matCellDef="let element"><p class="item-title"><img class="item-logo" [src]="element.logoUrl" alt=""><div class="item-username">{{element.username}}</div></p></mat-cell>
+        </ng-container>
+    
+        <!-- Name Column -->
+        <ng-container matColumnDef="时间">
+          <mat-header-cell *matHeaderCellDef><p class="table-header">时间</p></mat-header-cell>
+          <mat-cell *matCellDef="let element">{{element.time}}</mat-cell>
+        </ng-container>
+    
+        <!-- Weight Column -->
+        <ng-container matColumnDef="更多操作">
+          <mat-header-cell *matHeaderCellDef><p class="table-header">更多操作</p></mat-header-cell>
+          <mat-cell *matCellDef="let element"><a>查看详情{{element.uid}}</a></mat-cell>
+        </ng-container>
+    
+        <mat-header-row *matHeaderRowDef="DisplayedColumns"></mat-header-row>
+        <mat-row *matRowDef="let row; columns: DisplayedColumns;"></mat-row>
+      </mat-table>
+    </div>
+  </div>
 </div>

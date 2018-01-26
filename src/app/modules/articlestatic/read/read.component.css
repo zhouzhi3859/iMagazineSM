@@ -5,9 +5,8 @@
   margin-left: 3px;
 }
 
-.mat-table {
-  overflow: auto;
-  max-height: 500px;
+.table-container>div {
+  width: 100%;
 }
 
 .mat-header-cell.mat-sort-header-sorted {
