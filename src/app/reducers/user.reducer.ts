@@ -18,10 +18,10 @@ export interface State {
 
 export const initialState: State = {
   user: {
-    uid: '72b0ec50-efc6-11e7-bb2d-1fcfea41469e',
-    username: '上帝',
-    logoUrl: '/data/img/userLogo/logoDefault.jpg',
-    isLogin: true,
+    uid: '',
+    username: '',
+    logoUrl: '',
+    isLogin: false,
   },
 };
 
