@@ -4,6 +4,7 @@ a manage system of iMagazine app
 
 ```visit
 - you can visit http://www.zz3859.com:8081/ view running effect
+- now it stop work
 ```
 
 ## Development server
